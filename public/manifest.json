@@ -1,0 +1,22 @@
+{
+  "short_name": "B Teck",
+  "name": "B Teck | Software, Web & Mobile App Development",
+  "description": "B Teck provides software, websites, mobile apps, e-commerce, hosting, business email, branding, and company registration services.",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "bteck-logo.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1a5c2e",
+  "background_color": "#0d1117"
+}

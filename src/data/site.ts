@@ -20,7 +20,7 @@ import {
 } from 'lucide-react'
 
 import portfolio1 from '../assets/portfolio-beyondborders.jpg'
-import portfolio2 from '../assets/portfolio-bakonetrades.jpg'
+import portfolio2 from '../assets/portfolio-bokone.png'
 
 export const services = [
   {
@@ -124,27 +124,31 @@ export const projects: Project[] = [
   },
   {
     title: 'Bakone Trades',
-    tagline: 'E-commerce for trading & supplies',
-    desc: 'A full e-commerce experience with product catalog, secure checkout and customer management for a growing trading business.',
+    tagline: 'Forex trading systems & automated EA license store',
+    desc: 'A forex trading brand focused on market analysis, automated trading systems, and selling licensed trading bots (Expert Advisors) for retail traders.',
     url: 'https://www.bakonetrades.com',
     image: portfolio2,
-    category: 'E-commerce / Retail',
-    year: '2025',
-    tags: ['E-commerce', 'Payments', 'Inventory', 'Admin Dashboard'],
-    highlights: ['Secure payments', 'Inventory management', 'Admin dashboard'],
+    category: 'Forex Trading / FinTech',
+    year: '2026',
+    tags: ['Forex Trading', 'Expert Advisors', 'Automation', 'Trading Bots'],
+    highlights: [
+      'Automated forex trading systems (EAs)',
+      'Smart risk-managed trading strategies',
+      'Digital license key store for trading bots',
+    ],
     overview:
-      'Bakone Trades needed to move from offline sales to a professional online storefront. We built a full-stack e-commerce platform with product management, secure payments and an admin dashboard so the team can operate the shop end-to-end without any developer involvement.',
+      'Bakone Trades focuses on forex trading, market analysis, and automated trading systems designed to improve trader performance through precision entries, risk management, and algorithmic execution. The platform also operates as an online store where users can purchase license keys for trading bots (Expert Advisors) that run automated strategies across global markets.',
     features: [
-      'Full product catalog with categories, search and filters',
-      'Secure checkout with local payment integration',
-      'Inventory & stock-level management',
-      'Customer accounts and order history',
-      'Admin dashboard for orders, products and customers',
+      'Forex market analysis using price action, indicators, and volatility',
+      'Automated trading systems with predefined algorithms',
+      'Risk-managed entry and exit strategies',
+      'License key distribution for downloadable trading bots',
+      'Multi-broker and multi-market compatibility',
     ],
     results: [
-      { label: 'Products live', value: '100+' },
-      { label: 'Payment methods', value: 'Multiple' },
-      { label: 'Admin hand-off', value: '100%' },
+      { label: 'Bots available', value: '2+' },
+      { label: 'Markets supported', value: '20+' },
+      { label: 'Broker compatibility', value: 'Multi-platform' },
     ],
   },
 ]
@@ -202,13 +206,21 @@ export const techStack = [
   'TypeScript',
   'Node.js',
   'Tailwind CSS',
-  'React Native',
-  'Flutter',
+  'Android Studio',
+  'Swift',
   'Supabase',
   'PostgreSQL',
-  'Stripe',
+  'MySQL',
   'Firebase',
+  'Oracle',
+  'MongoDB',
   'AWS',
+  'Kotlin',
+  'Java',
+  'C#',
+  'PHP',
+  'Spring Boot',
+  'Asp.net',
 ]
 
 export const testimonials = [
@@ -235,7 +247,7 @@ export const testimonials = [
 export const faqs = [
   {
     q: 'How long does a typical project take?',
-    a: 'Most websites launch in 2–4 weeks. Custom software and mobile apps typically take 6–12 weeks depending on scope. We share a realistic timeline in our proposal.',
+    a: 'Most websites launch in 1–2 weeks. Custom software and mobile apps typically take 4–6 weeks depending on scope. We share a realistic timeline in our proposal.',
   },
   {
     q: 'How much does a project cost?',

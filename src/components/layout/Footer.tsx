@@ -1,7 +1,16 @@
 import logoAsset from '../../assets/bteck-logo.png'
 import { navLinks } from '../../data/site'
+import { useSectionRouter } from '../../hooks/use-section-router'
 
 export function Footer() {
+  const { navigate } = useSectionRouter()
+
+  const handleNavClick =
+    (path: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault()
+      navigate(path)
+    }
+
   return (
     <footer
       className="relative border-t"
@@ -13,7 +22,7 @@ export function Footer() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
-          <a href="#home" className="flex items-center gap-2">
+          <a href="/" onClick={handleNavClick('/')} className="flex items-center gap-2">
             <img
               src={logoAsset}
               alt="B Teck logo"
@@ -33,7 +42,11 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-white/60">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="hover:text-white transition-colors">
+                <a
+                  href={l.href}
+                  onClick={handleNavClick(l.href)}
+                  className="hover:text-white transition-colors"
+                >
                   {l.label}
                 </a>
               </li>

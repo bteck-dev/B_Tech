@@ -4,6 +4,7 @@ import { Footer } from './components/layout/Footer'
 import { Navbar } from './components/layout/Navbar'
 import type { Project } from './data/site'
 import { useScrollReveal } from './hooks/use-scroll-reveal'
+import { useSectionRouter } from './hooks/use-section-router'
 import { useTheme } from './hooks/use-theme'
 import { About } from './sections/About'
 import { Contact } from './sections/Contact'
@@ -22,6 +23,7 @@ export default function App() {
   const [active, setActive] = useState<Project | null>(null)
 
   useScrollReveal()
+  useSectionRouter()
 
   return (
     <div className="min-h-screen bg-page text-body overflow-x-hidden">

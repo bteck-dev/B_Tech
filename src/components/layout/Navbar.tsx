@@ -3,6 +3,7 @@ import { ArrowRight, Menu, X } from 'lucide-react'
 
 import logoAsset from '../../assets/bteck-logo.png'
 import { navLinks } from '../../data/site'
+import { useSectionRouter } from '../../hooks/use-section-router.ts'
 import { ThemeToggle } from '../shared/ThemeToggle'
 
 export function Navbar({
@@ -14,6 +15,15 @@ export function Navbar({
 }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const { navigate } = useSectionRouter()
+
+  const handleNavClick =
+    (path: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault()
+      navigate(path)
+      setOpen(false)
+    }
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     onScroll()
@@ -33,7 +43,11 @@ export function Navbar({
       }}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
-        <a href="#home" className="flex items-center gap-2 min-w-0">
+        <a
+          href="/"
+          onClick={handleNavClick('/')}
+          className="flex items-center gap-2 min-w-0"
+        >
           <img
             src={logoAsset}
             alt="B Teck logo"
@@ -49,6 +63,7 @@ export function Navbar({
               <li key={l.href}>
                 <a
                   href={l.href}
+                  onClick={handleNavClick(l.href)}
                   className="text-sm text-body-muted hover:text-body transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-gradient-brand after:transition-all hover:after:w-full"
                 >
                   {l.label}
@@ -58,7 +73,8 @@ export function Navbar({
           </ul>
           <ThemeToggle theme={theme} toggle={toggle} />
           <a
-            href="#contact"
+            href="/contact"
+            onClick={handleNavClick('/contact')}
             className="btn-brand hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm"
           >
             Get a Quote <ArrowRight className="h-4 w-4" />
@@ -78,7 +94,7 @@ export function Navbar({
             {navLinks.map((l) => (
               <li key={l.href}>
                 <a
-                  onClick={() => setOpen(false)}
+                  onClick={handleNavClick(l.href)}
                   href={l.href}
                   className="block text-body py-1"
                 >
@@ -88,8 +104,8 @@ export function Navbar({
             ))}
             <li>
               <a
-                onClick={() => setOpen(false)}
-                href="#contact"
+                onClick={handleNavClick('/contact')}
+                href="/contact"
                 className="btn-brand inline-flex w-full justify-center items-center gap-2 rounded-full px-5 py-2.5 text-sm"
               >
                 Get a Quote

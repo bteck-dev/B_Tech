@@ -2,6 +2,22 @@ import logoAsset from '../../assets/bteck-logo.png'
 import { navLinks } from '../../data/site'
 import { useSectionRouter } from '../../hooks/use-section-router'
 
+const supportEmail = 'support@bteck.co.za'
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={className}
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M16.6 5.82a6.08 6.08 0 0 0 3.56 1.14v3.12a9.02 9.02 0 0 1-3.54-.72v5.18a5.62 5.62 0 1 1-5.62-5.62c.35 0 .69.03 1.02.1v3.24a2.5 2.5 0 1 0 1.42 2.28V2h3.16v3.82Z" />
+    </svg>
+  )
+}
+
 export function Footer() {
   const { navigate } = useSectionRouter()
 
@@ -10,6 +26,11 @@ export function Footer() {
       e.preventDefault()
       navigate(path)
     }
+
+  const handleTikTokPlaceholder = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    alert('TikTok link coming soon.')
+  }
 
   return (
     <footer
@@ -36,6 +57,17 @@ export function Footer() {
             Empowering businesses through technology — from software and web to
             hosting, branding and business setup.
           </p>
+          <div className="mt-5 flex items-center gap-3">
+            <a
+              href="#"
+              onClick={handleTikTokPlaceholder}
+              aria-label="TikTok link coming soon"
+              title="TikTok link coming soon"
+              className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <TikTokIcon className="h-5 w-5" />
+            </a>
+          </div>
         </div>
         <div>
           <div className="text-sm font-semibold text-white">Quick Links</div>
@@ -59,6 +91,11 @@ export function Footer() {
             <li>
               <a href="tel:+27780330972" className="hover:text-white">
                 +27 78 033 0972
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${supportEmail}`} className="hover:text-white">
+                {supportEmail}
               </a>
             </li>
             <li>

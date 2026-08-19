@@ -47,8 +47,9 @@ export function useSectionRouter() {
   const navigate = useCallback((path: string) => {
     if (window.location.pathname !== path) {
       window.history.pushState({}, '', path)
+      window.dispatchEvent(new Event('locationchange'))
     }
-    scrollToSection(path)
+    requestAnimationFrame(() => scrollToSection(path))
   }, [])
 
   return { navigate }

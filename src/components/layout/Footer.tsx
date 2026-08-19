@@ -41,7 +41,7 @@ export function Footer() {
         borderColor: 'rgba(255,255,255,0.08)',
       }}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-5">
         <div className="md:col-span-2">
           <a href="/" onClick={handleNavClick('/')} className="flex items-center gap-2">
             <img
@@ -106,6 +106,36 @@ export function Footer() {
                 className="hover:text-white"
               >
                 WhatsApp Chat
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div className="text-sm font-semibold text-white">Policies</div>
+          <ul className="mt-4 space-y-2 text-sm text-white/60">
+            <li>
+              <a href="/terms-and-policies#refunds" className="hover:text-white transition-colors">
+                Refund Policy
+              </a>
+            </li>
+            <li>
+              <a href="/terms-and-policies#cancellations" className="hover:text-white transition-colors">
+                Cancellation Policy
+              </a>
+            </li>
+            <li>
+              <a href="/terms-and-policies#delivery" className="hover:text-white transition-colors">
+                Delivery Policy
+              </a>
+            </li>
+            <li>
+              <a href="/terms-of-service" className="hover:text-white transition-colors">
+                Terms of Service
+              </a>
+            </li>
+            <li>
+              <a href="/privacy-policy" className="hover:text-white transition-colors">
+                Privacy Policy
               </a>
             </li>
           </ul>

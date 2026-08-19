@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { ArrowRight, Mail, MessageCircle, Phone } from 'lucide-react'
-import { log } from 'console'
 
 const supportEmail = 'support@bteck.co.za'
 const formEndpoint = `https://formsubmit.co/ajax/${supportEmail}`
@@ -41,8 +40,6 @@ export function Contact() {
       }
       setStatus('sent')
 
-      console.log("Response: ", response);
-      
       alert('Thank you for your message. We will respond shortly.')
       form.reset()
       setTimeout(() => setStatus('idle'), 5000)
